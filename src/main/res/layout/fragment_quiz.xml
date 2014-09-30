@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:paddingTop="@dimen/padding_large"
+    android:paddingBottom="@dimen/padding_large"
+    android:paddingRight="@dimen/padding_large"
+    
+    android:layout_height="match_parent">
+        <View
+            android:id="@+id/separatorEnd"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="@dimen/padding_large"
+            android:layout_height="@dimen/padding_smaller"
+            android:layout_alignParentBottom="true"
+            android:background="@color/quiz_separator"/>
+
+        <RelativeLayout
+            android:id="@+id/rlLastAnswer"
+            android:layout_marginLeft="@dimen/padding_large"
+            android:layout_above="@id/separatorEnd"
+            android:layout_width="match_parent"
+            android:paddingBottom="@dimen/padding_default"
+            android:paddingTop="@dimen/padding_default"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtvLetterLast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/padding_default"
+                android:paddingBottom="@dimen/padding_default"
+                android:paddingLeft="@dimen/padding_large"
+                android:paddingRight="@dimen/padding_large"
+                android:text="A"
+                android:textColor="@color/font_gray"
+                android:textStyle="bold"
+                android:textSize="@dimen/font_large_semi"/>
+
+            <View
+                android:id="@+id/separatorA"
+                android:layout_width="@dimen/padding_smaller"
+                android:background="@color/quiz_separator"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/txtvLetterLast"
+                android:layout_alignBottom="@id/txtvLetterLast"
+                android:layout_toRightOf="@id/txtvLetterLast"/>
+
+            <TextView
+                android:layout_alignTop="@id/txtvLetterLast"
+                android:layout_alignBottom="@id/txtvLetterLast"
+                android:id="@+id/txtvAnswerLast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_large_semi"
+                android:gravity="center_vertical"
+                android:layout_toRightOf="@id/separatorA"
+                android:paddingLeft="@dimen/padding_large"
+                android:paddingRight="@dimen/padding_large"
+                android:text="DIESEL"/>
+            </RelativeLayout>
+
+        <View
+            android:layout_marginLeft="@dimen/padding_large"
+            android:id="@+id/separatorOverLowest"
+            android:layout_above="@id/rlLastAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/padding_smaller"
+            android:background="@color/quiz_separator"/>
+
+        <RelativeLayout
+            android:id="@+id/rlSecondLastAnswer"
+            android:layout_marginLeft="@dimen/padding_large"
+            android:layout_above="@id/separatorOverLowest"
+            android:layout_width="match_parent"
+            android:paddingBottom="@dimen/padding_default"
+            android:paddingTop="@dimen/padding_default"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtvLetterSecondLast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/padding_default"
+                android:paddingBottom="@dimen/padding_default"
+                android:paddingLeft="@dimen/padding_large"
+                android:paddingRight="@dimen/padding_large"
+                android:text="B"
+                android:textStyle="bold"
+                android:textColor="@color/font_gray"
+                android:textSize="@dimen/font_large_semi"/>
+
+            <View
+                android:id="@+id/separatorB"
+                android:layout_width="@dimen/padding_smaller"
+                android:background="@color/quiz_separator"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/txtvLetterSecondLast"
+                android:layout_alignBottom="@id/txtvLetterSecondLast"
+                android:layout_toRightOf="@id/txtvLetterSecondLast"/>
+
+            <TextView
+                android:layout_alignTop="@id/txtvLetterSecondLast"
+                android:layout_alignBottom="@id/txtvLetterSecondLast"
+                android:id="@+id/txtvAnswerSecondLast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_large_semi"
+                android:gravity="center_vertical"
+                android:layout_toRightOf="@id/separatorB"
+                android:paddingLeft="@dimen/padding_large"
+                android:paddingRight="@dimen/padding_large"
+                android:text="DIESEL"/>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/separatorTwoAnswers"
+            android:layout_marginLeft="@dimen/padding_large"
+            android:layout_above="@id/rlSecondLastAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/padding_smaller"
+            android:background="@color/quiz_separator"/>
+
+        <RelativeLayout
+            android:id="@+id/rlThirdLastAnswer"
+            android:layout_marginLeft="@dimen/padding_large"
+            android:layout_above="@id/separatorTwoAnswers"
+            android:layout_width="match_parent"
+            android:paddingBottom="@dimen/padding_default"
+            android:paddingTop="@dimen/padding_default"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtvLetterThirdLast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/padding_default"
+                android:paddingBottom="@dimen/padding_default"
+                android:paddingLeft="@dimen/padding_large"
+                android:paddingRight="@dimen/padding_large"
+                android:text="C"
+                android:textColor="@color/font_gray"
+                android:textStyle="bold"
+                android:textSize="@dimen/font_large_semi"/>
+
+            <View
+                android:id="@+id/separatorC"
+                android:layout_width="@dimen/padding_smaller"
+                android:background="@color/quiz_separator"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/txtvLetterThirdLast"
+                android:layout_alignBottom="@id/txtvLetterThirdLast"
+                android:layout_toRightOf="@id/txtvLetterThirdLast"/>
+
+            <TextView
+                android:layout_alignTop="@id/txtvLetterThirdLast"
+                android:layout_alignBottom="@id/txtvLetterThirdLast"
+                android:id="@+id/txtvAnswerThirdLast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_large_semi"
+                android:gravity="center_vertical"
+                android:layout_toRightOf="@id/separatorC"
+                android:paddingLeft="@dimen/padding_large"
+                android:paddingRight="@dimen/padding_large"
+                android:text="DIESEL"/>
+        </RelativeLayout>
+        <View
+            android:id="@+id/separatorThreeAnswers"
+            android:layout_marginLeft="@dimen/padding_large"
+            android:layout_above="@id/rlThirdLastAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/padding_smaller"
+            android:background="@color/quiz_separator"/>
+
+        <RelativeLayout
+            android:id="@+id/rlFourthLastAnswer"
+            android:layout_marginLeft="@dimen/padding_large"
+            android:layout_above="@id/separatorThreeAnswers"
+            android:layout_width="match_parent"
+            android:paddingBottom="@dimen/padding_default"
+            android:paddingTop="@dimen/padding_default"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtvLetterFourthLast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/padding_default"
+                android:paddingBottom="@dimen/padding_default"
+                android:paddingLeft="@dimen/padding_large"
+                android:paddingRight="@dimen/padding_large"
+                android:text="D"
+                android:textColor="@color/font_gray"
+                android:textStyle="bold"
+                android:textSize="@dimen/font_large_semi"/>
+
+            <View
+                android:id="@+id/separatorD"
+                android:layout_width="@dimen/padding_smaller"
+                android:background="@color/quiz_separator"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/txtvLetterFourthLast"
+                android:layout_alignBottom="@id/txtvLetterFourthLast"
+                android:layout_toRightOf="@id/txtvLetterFourthLast"/>
+
+            <TextView
+                android:layout_alignTop="@id/txtvLetterFourthLast"
+                android:layout_alignBottom="@id/txtvLetterFourthLast"
+                android:id="@+id/txtvAnswerFourthLast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_large_semi"
+                android:gravity="center_vertical"
+                android:layout_toRightOf="@id/separatorD"
+                android:paddingLeft="@dimen/padding_large"
+                android:paddingRight="@dimen/padding_large"
+                android:text="DIESEL"/>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/separatorFourAnswers"
+            android:layout_marginLeft="@dimen/padding_large"
+            android:layout_above="@id/rlFourthLastAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/padding_smaller"
+            android:background="@color/quiz_separator"/>
+    
+        <com.logtomobile.zoomit.ui.view.AutoResizeTextView
+            android:id="@+id/txtvQuestion"
+            android:layout_marginLeft="@dimen/padding_large"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/separatorFourAnswers"
+            android:gravity="center"
+            android:textSize="@dimen/font_xxlarge"
+            android:text="Jakie paliwo tankujesz do swojego auta?"/>
+    
+        <View
+            android:id="@+id/highlightLast"
+            android:visibility="invisible"
+            android:layout_width="@dimen/padding_small"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/separatorOverLowest"
+            android:layout_above="@id/separatorEnd"
+            android:background="@color/quiz_background"/>
+
+        <View
+            android:id="@+id/highlightSecondLast"
+            android:layout_width="@dimen/padding_small"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/separatorTwoAnswers"
+            android:layout_above="@id/separatorOverLowest"
+            android:visibility="invisible"
+            android:background="@color/quiz_background"/>
+
+        <View
+            android:id="@+id/highlightThirdLast"
+            android:layout_width="@dimen/padding_small"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/separatorThreeAnswers"
+            android:layout_above="@id/separatorTwoAnswers"
+            android:visibility="invisible"
+            android:background="@color/quiz_background"/>
+
+        <View
+            android:id="@+id/highlightFourthLast"
+            android:layout_width="@dimen/padding_small"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/separatorFourAnswers"
+            android:layout_above="@id/separatorThreeAnswers"
+            android:visibility="invisible"
+            android:background="@color/quiz_background"/>
+        
+
+
+
+</RelativeLayout>
