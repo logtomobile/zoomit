@@ -194,7 +194,7 @@ public class QuizFragment extends ZoomitBaseFragment {
             mHighlightThirdLast.setVisibility(View.VISIBLE);
             mTxtvThirdLastAnswer.setTextColor(getResources().getColor(R.color.quiz_background));
             mTxtvThirdLastLetter.setTextColor(getResources().getColor(R.color.quiz_background));
-        } else if (mAnsweredLayout.equals(mRlThirdLastAnswer)) {
+        } else if (mAnsweredLayout.equals(mRlFourthLastAnswer)) {
             mHighlightFourthLast.setVisibility(View.VISIBLE);
             mTxtvFourthLastAnswer.setTextColor(getResources().getColor(R.color.quiz_background));
             mTxtvFourthLastLetter.setTextColor(getResources().getColor(R.color.quiz_background));
@@ -228,7 +228,7 @@ public class QuizFragment extends ZoomitBaseFragment {
     }
 
     private void setValues(int i) {
-        if (i == 4) {
+        if (i == 4) {m
             mTxtvFourthLastLetter.setText("A");
             mTxtvThirdLastLetter.setText("B");
             mTxtvSecondLastLetter.setText("C");
