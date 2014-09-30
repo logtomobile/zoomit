@@ -212,16 +212,18 @@ public class QuizFragment extends ZoomitBaseFragment {
         if (mAnswerList.size() < 4) {
             mRlFourthLastAnswer.setVisibility(View.GONE);
             viewSeparatorFourAnswers.setVisibility(View.GONE);
-        } else {
-            setValues(4);
         }
-
         if (mAnswerList.size() < 3) {
             mRlThirdLastAnswer.setVisibility(View.GONE);
             viewSeparatorThreeAnswers.setVisibility(View.GONE);
-            setValues(2);
-        } else {
+        }
+
+        if (mAnswerList.size() == 4) {
+            setValues(4);
+        } else if (mAnswerList.size() == 3) {
             setValues(3);
+        } else {
+            setValues(2);
         }
     }
 
