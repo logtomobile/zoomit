@@ -228,7 +228,7 @@ public class QuizFragment extends ZoomitBaseFragment {
     }
 
     private void setValues(int i) {
-        if (i == 4) {m
+        if (i == 4) {
             mTxtvFourthLastLetter.setText("A");
             mTxtvThirdLastLetter.setText("B");
             mTxtvSecondLastLetter.setText("C");
