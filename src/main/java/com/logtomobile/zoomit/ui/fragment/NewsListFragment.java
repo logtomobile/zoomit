@@ -7,7 +7,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,8 +17,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.common.eventbus.Subscribe;
-import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.google.inject.Inject;
 import com.logtomobile.zoomit.R;
 import com.logtomobile.zoomit.ZoomitApplication;
@@ -34,10 +33,7 @@ import com.logtomobile.zoomit.ui.event.LocationEvent;
 import com.logtomobile.zoomit.util.BundleConstants;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -110,10 +106,9 @@ public class NewsListFragment extends ZoomitBaseFragment {
                     Location secondLocation = new Location("l");
                     secondLocation.setLatitude(locationText.getLatitude());
                     secondLocation.setLongitude(locationText.getLongtitude());
+
                     float distance = mCurrentLocation.distanceTo(secondLocation);
                     distance /= 1000;
-
-                    System.out.println("Distance "+distance +" radius "+locationText.getRadius()+" text "+locationText.getText());
                     if (distance < locationText.getRadius()) {
                         newsText = newsText.replaceAll(locationText.getTag(), locationText.getText());
                     } else {
@@ -265,8 +260,6 @@ public class NewsListFragment extends ZoomitBaseFragment {
                 e.printStackTrace();
             }
             return result;
-//        }
-//        return null;
     }
 
     private void getGson(String s) {
@@ -287,7 +280,6 @@ public class NewsListFragment extends ZoomitBaseFragment {
                     long locationId = (locationText.getNewsId() + locationText.getLatitude() + locationText.getLongtitude() +
                                        locationText.getRadius() + locationText.getText() + locationText.getTag()).hashCode();
                     locationText.setLocationTextId(locationId);
-                    System.out.println("LocationText "+locationText.toString());
                     mDatabase.addLocationText(locationText);
                 }
                 if (n.getQuestionList() != null) {
@@ -338,11 +330,6 @@ public class NewsListFragment extends ZoomitBaseFragment {
     private void setListView() {
         mCurrentLocation = mMainActivity.getCurrentLocation();
 
-        if (mCurrentLocation != null) {
-            System.out.println("Basic location "+mCurrentLocation.getLatitude() +" "+mCurrentLocation.getLongitude());
-        } else {
-            System.out.println("Basic location == null");
-        }
 
         mAdapterNews = new NewsAdapter(getActivity(), R.layout.lvlitem_news, mNews);
         mLvNews.setAdapter(mAdapterNews);

@@ -1,6 +1,5 @@
 package com.logtomobile.zoomit.db;
 
-import android.location.Location;
 import android.support.annotation.NonNull;
 
 import com.google.inject.Inject;

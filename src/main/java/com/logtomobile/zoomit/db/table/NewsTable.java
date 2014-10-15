@@ -16,6 +16,7 @@ public class NewsTable extends AbstractTable {
         public static final String CURRENT_LEVEL = "current_level";
         public static final String MAX_LEVEL = "max_level";
         public static final String ORDER = "orderNews";
+        public static final String EMPTY_EXPLANATION = "emptyExplanation";
     }
 
     public static final class ColumnID {
@@ -25,6 +26,7 @@ public class NewsTable extends AbstractTable {
         public static final int CURRENT_LEVEL = 3;
         public static final int MAX_LEVEL = 4;
         public static final int ORDER = 5;
+        public static final int EMPTY_EXPLANATION = 6;
     }
 
     public static final String TABLE_NAME = "news_table";
@@ -35,7 +37,8 @@ public class NewsTable extends AbstractTable {
             Column.MINIATURE_PATH,
             Column.CURRENT_LEVEL,
             Column.MAX_LEVEL,
-            Column.ORDER
+            Column.ORDER,
+            Column.EMPTY_EXPLANATION
     };
 
     @Inject
@@ -62,7 +65,8 @@ public class NewsTable extends AbstractTable {
                         "%s TEXT NOT NULL, " +
                         "%s INTEGER, " +
                         "%s INTEGER, " +
-                        "%s INTEGER);",
+                        "%s INTEGER, " +
+                        "%s TEXT);",
 
                 TABLE_NAME,
                 Column.NEWS_ID,
@@ -70,7 +74,8 @@ public class NewsTable extends AbstractTable {
                 Column.MINIATURE_PATH,
                 Column.CURRENT_LEVEL,
                 Column.MAX_LEVEL,
-                Column.ORDER
+                Column.ORDER,
+                Column.EMPTY_EXPLANATION
         );
 
         db.execSQL(sql);

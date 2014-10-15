@@ -1,12 +1,7 @@
 package com.logtomobile.zoomit.ui;
 
-import android.content.Context;
-import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
-import android.location.LocationManager;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -57,6 +52,7 @@ public class MainActivity extends ZoomitBaseActivity {
     private int mQuizPosition;
     private List<Question> mQuestionsForQuiz;
     private String mExplanationText;
+    private String mEmptyExplanation;
 
     private PositionTracker mPositionTracker;
 
@@ -149,6 +145,7 @@ public class MainActivity extends ZoomitBaseActivity {
 
     public void startQuiz(News news) {
         mMenuItemMinimizeAll.setVisible(false);
+        mEmptyExplanation = news.getEmptyExplanation();
         mExplanationText = "";
         mQuizPosition = 0;
         mQuestionsForQuiz = mDatabase.getQuestionsForNews(news);
@@ -186,7 +183,10 @@ public class MainActivity extends ZoomitBaseActivity {
     }
 
     private void startAfterQuizAction() {
-        if (!mExplanationText.isEmpty()) {
+        if (mExplanationText.isEmpty()) {
+            mExplanationText = mEmptyExplanation;
+        }
+        if (mExplanationText != null) {
             setFragment(ExplanationFragment.createInstance(mExplanationText), ExplanationFragment.TAG);
         } else {
             goBackToBaseFragment();

@@ -1,6 +1,7 @@
 package com.logtomobile.zoomit.model;
 
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -27,11 +28,13 @@ public class News {
     private List<LocationText> mLocationTextList = new ArrayList<LocationText>();
     @SerializedName("order")
     private int mOrder;
+    @SerializedName("emptyExplanation")
+    private String mEmptyExplanation;
 
     private int mCurrentLevel;
     private int mMaxLevel;
 
-    public News(@NonNull String title, @NonNull String miniaturePath, int currentLevel, int order) {
+    public News(@NonNull String title, @NonNull String miniaturePath, int currentLevel, int order, @Nullable String emptyExplanation) {
         checkNotNull(title, "title cannot be null");
         checkNotNull(miniaturePath, "miniaturePath cannot be null");
         checkArgument(!title.isEmpty(), "title cannot be empty");
@@ -41,9 +44,10 @@ public class News {
         mMiniaturePath = miniaturePath;
         mCurrentLevel = currentLevel;
         mOrder = order;
+        mEmptyExplanation = emptyExplanation;
     }
 
-    public News(long id, @NonNull String title, @NonNull String miniaturePath, int currentLevel, int order) {
+    public News(long id, @NonNull String title, @NonNull String miniaturePath, int currentLevel, int order, @Nullable String emptyExplanation) {
         checkNotNull(title, "title cannot be null");
         checkNotNull(miniaturePath, "miniaturePath cannot be null");
         checkArgument(!title.isEmpty(), "title cannot be empty");
@@ -54,6 +58,7 @@ public class News {
         mMiniaturePath = miniaturePath;
         mCurrentLevel = currentLevel;
         mOrder = order;
+        mEmptyExplanation = emptyExplanation;
     }
 
     public News() {
@@ -106,5 +111,13 @@ public class News {
 
     public int getOrder() {
         return mOrder;
+    }
+
+    public String getEmptyExplanation() {
+        return mEmptyExplanation;
+    }
+
+    public void setEmptyExplanation(String emptyExplanation) {
+        mEmptyExplanation = emptyExplanation;
     }
 }

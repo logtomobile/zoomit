@@ -25,7 +25,7 @@ public class LocationText {
     @SerializedName("tag")
     private String mTag;
 
-    public LocationText(long newsId, double longtitude, double latitude, int radius,
+    public LocationText(long newsId, double latitude, double longtitude, int radius,
                         @NonNull String text, @NonNull String tag) {
         checkNotNull(text, "Text cannot be null");
         checkArgument(!text.isEmpty(), "Text cannot be empty");
@@ -40,7 +40,7 @@ public class LocationText {
         mTag = tag;
     }
 
-    public LocationText(long id, long newsId, double longtitude, double latitude, int radius,
+    public LocationText(long id, long newsId, double latitude, double longtitude, int radius,
                         @NonNull String text, @NonNull String tag) {
         checkNotNull(text, "Text cannot be null");
         checkArgument(!text.isEmpty(), "Text cannot be empty");

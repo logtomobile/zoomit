@@ -21,8 +21,9 @@ public class NewsDataSource extends AbstractDataSource<News, NewsTable> {
         int currentLevel = c.getInt(NewsTable.ColumnID.CURRENT_LEVEL);
         int maxLevel = c.getInt(NewsTable.ColumnID.MAX_LEVEL);
         int order = c.getInt(NewsTable.ColumnID.ORDER);
+        String emptyExplanation = c.getString(NewsTable.ColumnID.EMPTY_EXPLANATION);
 
-        News n = new News(newsId, title, miniature, currentLevel, order);
+        News n = new News(newsId, title, miniature, currentLevel, order, emptyExplanation);
         n.setMaxLevel(maxLevel);
         return n;
     }
@@ -37,6 +38,7 @@ public class NewsDataSource extends AbstractDataSource<News, NewsTable> {
         values.put(NewsTable.Column.CURRENT_LEVEL, news.getCurrentLevel());
         values.put(NewsTable.Column.MAX_LEVEL, news.getMaxLevel());
         values.put(NewsTable.Column.ORDER, news.getOrder());
+        values.put(NewsTable.Column.EMPTY_EXPLANATION, news.getEmptyExplanation());
 
         return values;
     }
