@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="@dimen/padding_large"
+    android:layout_marginRight="@dimen/padding_large"
+    android:layout_marginTop="@dimen/padding_default"
+    android:background="@android:color/white"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/txtvExplanationTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_default"
+        android:textSize="@dimen/font_default"
+        android:text="Explanation" />
+
+    <TextView
+        android:id="@+id/txtvExplanationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/padding_default"
+        android:paddingLeft="@dimen/padding_default"
+        android:paddingRight="@dimen/padding_default"
+        android:text="Explanation text"
+        android:textSize="@dimen/font_default_smaller" />
+
+    <TextView
+        android:id="@+id/txtvExplanationSkip"
+        android:layout_width="wrap_content"
+        android:background="@drawable/rounded_rectangle_blue"
+        android:text="Back to article"
+        android:layout_marginBottom="@dimen/padding_large"
+        android:padding="@dimen/padding_default"
+        android:layout_marginLeft="@dimen/padding_default"
+        android:layout_marginTop="@dimen/padding_xlarge"
+        android:textColor="@color/v_white"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

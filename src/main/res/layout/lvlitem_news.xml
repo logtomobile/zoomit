@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgvNewsMiniature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"/>
+
+        <RelativeLayout
+            android:id="@+id/llNewsControl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/padding_large"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:id="@+id/txtvDontUnderstand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/padding_large"
+                android:background="@drawable/rounded_rectangle_orange"
+                android:paddingBottom="@dimen/padding_small"
+                android:paddingLeft="@dimen/padding_default"
+                android:paddingRight="@dimen/padding_default"
+                android:paddingTop="@dimen/padding_small"
+                android:text="I don't understand"
+                android:textColor="@color/v_white"
+                android:textSize="@dimen/font_default_smaller" />
+
+            <ImageView
+                android:id="@+id/imgvPlus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/padding_default"
+                android:layout_centerVertical="true"
+                android:src="@drawable/btn_plus" />
+
+            <TextView
+                android:id="@+id/txtvNewsPercentText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/imgvPlus"
+                android:layout_alignTop="@id/imgvPlus"
+                android:layout_toLeftOf="@id/imgvPlus"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:text="25%"
+                android:textColor="@color/v_white"
+                android:textSize="@dimen/font_large" />
+
+            <ImageView
+                android:id="@+id/imgvMinus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/txtvNewsPercentText"
+                android:padding="@dimen/padding_default"
+                android:src="@drawable/btn_minus" />
+
+            <TextView
+                android:id="@+id/txtvNewsAproximateTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/imgvMinus"
+                android:layout_alignRight="@id/imgvPlus"
+                android:layout_marginRight="@dimen/padding_default"
+                android:layout_marginLeft="@dimen/padding_default"
+                android:layout_below="@id/txtvNewsPercentText"
+                android:background="@drawable/rounded_rectangle_black"
+                android:gravity="center"
+                android:text="approx: 10sec"
+                android:textColor="@color/v_white"
+                android:textSize="@dimen/font_small" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txtvNewsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@id/rl"
+        android:layout_below="@id/rl"
+        android:padding="@dimen/padding_default"
+        android:textSize="@dimen/font_default"
+        android:text="Do you like loud music, or prefer to listen quietly" />
+
+    <TextView
+        android:id="@+id/txtvNewsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@id/rl"
+        android:layout_below="@id/txtvNewsTitle"
+        android:paddingBottom="@dimen/padding_default"
+        android:paddingLeft="@dimen/padding_default"
+        android:paddingRight="@dimen/padding_default"
+        android:text="Listening to Tom Petty and the Hearthbreakers"
+        android:textSize="@dimen/font_default_smaller" />
+</RelativeLayout>

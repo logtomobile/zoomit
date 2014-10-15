@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="zoomit_background_gray">#EDEDED</color>
+    <color name="v_white">@android:color/white</color>
+
+    <color name="actionbar_gradient_start">#0F84D2</color>
+    <color name="actionbar_gradient_end">#0C57B4</color>
+    <color name="quiz_background">#0f8cd8</color>
+    <color name="quiz_background_semi_transparent">#800f8cd8</color>
+    <color name="quiz_separator">#D0D1D9</color>
+
+    <color name="font_gray">#ff909090</color>
+    <color name="light_gray_divider">#e8e8e8</color>
+</resources>
